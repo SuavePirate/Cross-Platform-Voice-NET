@@ -1,0 +1,62 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "animal facts",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AnimalFactIntent",
+          "slots": [
+            {
+              "name": "Animal",
+              "type": "AMAZON.Animal"
+            }
+          ],
+          "samples": [
+            "Give me a {Animal} fact",
+            "Give me an {Animal} fact",
+            "Tell me an {Animal} fact",
+            "Tell me a {Animal} fact",
+            "What's a fact about {Animal}",
+            "What is an {Animal}",
+            "What is  an {Animal}",
+            "What do you know about {Animal}",
+            "What is a fact about {Animal}",
+            "Tell me about {Animal}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "AMAZON.Animal",
+          "values": [
+            {
+              "name": {
+                "value": "string"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
