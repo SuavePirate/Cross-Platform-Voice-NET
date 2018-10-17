@@ -18,6 +18,7 @@ namespace AnimalFacts.Controllers
     /// Endpoints for handling assistant requests
     /// </summary>
     [Route("api/[controller]")]
+    [Produces("application/json")]
     public class AssistantController : Controller
     {
         private readonly AnimalContext _context;
@@ -70,7 +71,7 @@ namespace AnimalFacts.Controllers
         }
 
         [HttpPost("GoogleAssistant")]
-        public async Task<ActionResponse> GoogleAssistant([FromBody]ActionRequest input)
+        public async Task<JsonResult> GoogleAssistant([FromBody]ActionRequest input)
         {
             try
             {
@@ -79,7 +80,7 @@ namespace AnimalFacts.Controllers
                 // handle welcome / launch requests
                 if (intentName == Intents.Welcome)
                 {
-                    return DialogBuilder.Ask(Messages.Welcome);
+                    return Json(DialogBuilder.Ask(Messages.Welcome));
                 }
 
                 // handle the animal fact response
@@ -92,20 +93,20 @@ namespace AnimalFacts.Controllers
                     // if we don't have an animal - reprompt
                     if (animalFact == null)
                     {
-                        return DialogBuilder.Ask("I don't know about that animal. Try a different one!");
+                        return Json(DialogBuilder.Ask("I don't know about that animal. Try a different one!"));
                     }
 
                     // return the fact
-                    return DialogBuilder.Tell(animalFact.Fact);
+                    return Json(DialogBuilder.Tell(animalFact.Fact));
                 }
 
 
-                return DialogBuilder.Tell("Something went wrong. Please try again later.");
+                return Json(DialogBuilder.Tell("Something went wrong. Please try again later."));
             }
             catch
             {
                 // return a response if something goes wrong
-                return DialogBuilder.Tell("Something went wrong. Please try again later.");
+                return Json(DialogBuilder.Tell("Something went wrong. Please try again later."));
             }
         }
     }

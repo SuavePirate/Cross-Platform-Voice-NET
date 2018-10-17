@@ -12,6 +12,7 @@ namespace AnimalFacts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class AnimalFactsController : ControllerBase
     {
         private readonly AnimalContext _context;
