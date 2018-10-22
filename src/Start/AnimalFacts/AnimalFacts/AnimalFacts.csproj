@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>77e55c4a-4525-401a-bcfa-2e5661db07a4</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="InteractionModels\**" />
+    <Compile Remove="Models\Constants\**" />
+    <Compile Remove="Models\DialogFlow\**" />
+    <Content Remove="InteractionModels\**" />
+    <Content Remove="Models\Constants\**" />
+    <Content Remove="Models\DialogFlow\**" />
+    <EmbeddedResource Remove="InteractionModels\**" />
+    <EmbeddedResource Remove="Models\Constants\**" />
+    <EmbeddedResource Remove="Models\DialogFlow\**" />
+    <None Remove="InteractionModels\**" />
+    <None Remove="Models\Constants\**" />
+    <None Remove="Models\DialogFlow\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Alexa.NET" Version="1.5.4" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.1.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.1.2" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
+  </ItemGroup>
+
+</Project>
