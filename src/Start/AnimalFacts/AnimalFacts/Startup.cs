@@ -71,7 +71,7 @@ namespace AnimalFacts
             app.UseSwagger();
             app.UseSwaggerUI(config =>
             {
-                config.SwaggerEndpoint("/swagger/v1/swagger.json", "Voicify CMS API v1");
+                config.SwaggerEndpoint("/swagger/v1/swagger.json", "Animal Facts API v1");
             });
         }
     }
